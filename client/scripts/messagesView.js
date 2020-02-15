@@ -4,11 +4,19 @@ var MessagesView = {
 
   initialize: function() {
     //input: no input
-    //output: 
+    //output:
 
   },
 
-  render: function() {
+  render: function(messages) {
+    var html = '';
+
+    messages.forEach(element => {
+      html += MessageView.render(element);
+    });
+
+    MessagesView.$chats.append(html);
+
   }
 
 };

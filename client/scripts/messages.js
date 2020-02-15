@@ -13,6 +13,18 @@ var Messages = {
   },
 
   renderInitialMsg: function (data) {
-    
+    var {results} = data;
+    var messages = results.reduce(function(accumulator, currentVal) {
+      var {username, text} = currentVal;
+      if (username && text) {
+        accumulator.push({
+          username,
+          text
+        });
+      }
+
+      return accumulator;
+    }, []);
+    MessagesView.render(messages);
   }
 };

@@ -20,7 +20,10 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data)
+      console.log(data);
+      // render initial messages
+      Messages.renderInitialMsg(data);
+      // render options
 
       Rooms.createOptions(data);
       callback();
