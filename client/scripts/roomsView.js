@@ -16,8 +16,8 @@ var RoomsView = {
   handleAddRoom: function() {
     //create a variable called userPrompt and assign to prompt function
     var newRoom = prompt('Name of the room?');
-    // call rooms and pass in userPrompt
+    //call rooms and pass in userPrompt
     Rooms.addRoom(newRoom);
-  }
+  },
 
 };

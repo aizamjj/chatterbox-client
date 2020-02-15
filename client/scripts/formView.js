@@ -1,6 +1,7 @@
 var FormView = {
 
   $form: $('form'),
+  $message: $('#message'),
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
@@ -9,8 +10,11 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
-    console.log('click!');
+    let message = FormView.$message.val();
+
+    Messages.store(message);
+    // create messageview
+    //render to messageview
   },
 
   setStatus: function(active) {
