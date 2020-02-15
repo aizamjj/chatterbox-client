@@ -10,5 +10,9 @@ var Messages = {
     Parse.create(message, result => {
       console.log('successfully saved my message');
     });
+  },
+
+  renderInitialMsg: function (data) {
+    
   }
 };

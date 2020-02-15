@@ -11,6 +11,7 @@ var RoomsView = {
 
   render: function() {
 
+
   },
 
   handleAddRoom: function() {
@@ -19,5 +20,15 @@ var RoomsView = {
     //call rooms and pass in userPrompt
     Rooms.addRoom(newRoom);
   },
+
+  renderOptions: function(options) {
+    // create tag options so that select can render each option
+    $.each(options, function (index, item) {
+      RoomsView.$select.append($('<option>', {
+        value: item,
+        text: item
+      }));
+    });
+  }
 
 };

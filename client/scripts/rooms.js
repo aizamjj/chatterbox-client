@@ -27,7 +27,9 @@ var Rooms = {
 
       return accumulator;
     }, []);
+    RoomsView.renderOptions(options);
   },
+
 
 };
 
