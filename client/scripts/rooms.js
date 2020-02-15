@@ -12,6 +12,7 @@ var Rooms = {
       console.log(success);
     });
 
+    RoomsView.addNewRoomOption(roomname);
   },
 
   // manipulate the data to only have unique room

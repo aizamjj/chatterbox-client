@@ -15,8 +15,12 @@ var RoomsView = {
   handleAddRoom: function() {
     //create a variable called userPrompt and assign to prompt function
     var newRoom = prompt('Name of the room?');
-    //call rooms and pass in userPrompt
-    Rooms.addRoom(newRoom);
+
+    //check if undefined then don't run function
+    if (newRoom) {
+      //call rooms and pass in userPrompt
+      Rooms.addRoom(newRoom);
+    }
   },
 
   renderOptions: function(options) {
@@ -37,6 +41,13 @@ var RoomsView = {
     // select all messages that are in the same room
     Rooms.retrieveRoomMessages(roomName);
 
+  },
+
+  addNewRoomOption: function(room) {
+    RoomsView.$select.append($('<option>', {
+      value: room,
+      text: room
+    }).prop('selected', true));
   }
 
 };
