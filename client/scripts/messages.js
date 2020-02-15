@@ -4,8 +4,13 @@ var Messages = {
     var message = {
       username: App.username,
       text,
-      roomname: RoomsView.$select.val() // Replace this later with user selected roomname
+      roomname: RoomsView.$select.val() || 'lobby' // Replace this later with user selected roomname
     };
+
+    // Clear the form input and insert new message dynamically to the top chatroom
+    FormView.$message.val('');
+    var addedMessage = MessageView.render(message);
+    MessagesView.$chats.prepend(addedMessage);
 
     Parse.create(message, result => {
       console.log('successfully saved my message');

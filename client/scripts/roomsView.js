@@ -10,8 +10,6 @@ var RoomsView = {
   },
 
   render: function() {
-
-
   },
 
   handleAddRoom: function() {
