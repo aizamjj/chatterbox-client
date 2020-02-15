@@ -14,7 +14,7 @@ var FormView = {
 
     Messages.store(message);
     // create messageview
-    //render to messageview
+    // render to messageview
   },
 
   setStatus: function(active) {

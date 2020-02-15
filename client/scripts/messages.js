@@ -4,7 +4,7 @@ var Messages = {
     var message = {
       username: App.username,
       text,
-      roomname: 'lobby' // Replace this later with user selected roomname
+      roomname: RoomsView.$select.val() // Replace this later with user selected roomname
     };
 
     Parse.create(message, result => {

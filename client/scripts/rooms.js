@@ -1,14 +1,17 @@
 var Rooms = {
 
-  addRoom: function(name) {
-    // create empty messageview with roomname property of name
-    // var empty =
-    // // render the messageview
-    // MessageView.render(name);
-    // // call messageview with input message
+  addRoom: function(roomname) {
+    // create object to pass into the create method so we can save to database
+    var message = {username: '', text: '', roomname};
+    // clear the messageView
+    MessagesView.render([]);
+    // call messageview with input message
     // MessageView()
-    // // call parse.create
-    // Parse.create()
+    // call parse.create
+    Parse.create(message, function(success) {
+      console.log(success);
+    });
+
   },
 
   // manipulate the data to only have unique room

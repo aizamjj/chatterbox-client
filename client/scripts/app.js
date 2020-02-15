@@ -24,7 +24,6 @@ var App = {
       // render initial messages
       Messages.renderInitialMsg(data);
       // render options
-
       Rooms.createOptions(data);
       callback();
     });

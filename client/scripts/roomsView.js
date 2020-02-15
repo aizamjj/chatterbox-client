@@ -22,6 +22,9 @@ var RoomsView = {
   },
 
   renderOptions: function(options) {
+    // create an Empty option
+    RoomsView.$select.append($('<option>', {}));
+
     // create tag options so that select can render each option
     $.each(options, function (index, item) {
       RoomsView.$select.append($('<option>', {
@@ -35,7 +38,7 @@ var RoomsView = {
     var roomName = RoomsView.$select.val();
     // select all messages that are in the same room
     Rooms.retrieveRoomMessages(roomName);
-    
+
   }
 
 };
