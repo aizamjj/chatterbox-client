@@ -6,7 +6,7 @@ var RoomsView = {
   initialize: function() {
     // attach an event to jQuery node so that when we click on it it will prompt the user for new room
     RoomsView.$button.on('click', RoomsView.handleAddRoom);
-
+    RoomsView.$select.on('change', RoomsView.handleChangeRoom);
   },
 
   render: function() {
@@ -29,6 +29,13 @@ var RoomsView = {
         text: item
       }));
     });
+  },
+
+  handleChangeRoom: function() {
+    var roomName = RoomsView.$select.val();
+    // select all messages that are in the same room
+    Rooms.retrieveRoomMessages(roomName);
+    
   }
 
 };

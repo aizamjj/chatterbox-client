@@ -30,6 +30,15 @@ var Rooms = {
     RoomsView.renderOptions(options);
   },
 
+  retrieveRoomMessages: function(roomName) {
+    Parse.fetch(roomName, function(results) {
+      var msgs = Messages.getUsernameAndText(results);
+
+      MessagesView.render(msgs);
+
+    });
+
+  }
 
 };
 

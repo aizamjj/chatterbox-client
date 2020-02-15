@@ -13,6 +13,12 @@ var Messages = {
   },
 
   renderInitialMsg: function (data) {
+    var messages = Messages.getUsernameAndText(data);
+
+    MessagesView.render(messages);
+  },
+
+  getUsernameAndText: function(data) {
     var {results} = data;
     var messages = results.reduce(function(accumulator, currentVal) {
       var {username, text} = currentVal;
@@ -25,6 +31,7 @@ var Messages = {
 
       return accumulator;
     }, []);
-    MessagesView.render(messages);
+
+    return messages;
   }
 };
