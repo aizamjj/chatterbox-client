@@ -8,16 +8,17 @@ var MessagesView = {
 
   },
 
-  render: function(messages) {
+  render: function(messages, clear) {
     var html = '';
     // clear the Chat Room
-    MessagesView.$chats.empty();
+    if (!clear) {
+      MessagesView.$chats.empty();
+    }
+
     messages.forEach(element => {
       html += MessageView.render(element);
     });
 
     MessagesView.$chats.append(html);
-
   }
-
 };

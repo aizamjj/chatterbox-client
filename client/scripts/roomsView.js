@@ -41,6 +41,12 @@ var RoomsView = {
     // select all messages that are in the same room
     Rooms.retrieveRoomMessages(roomName);
 
+    // Clear the interval with the new room
+    clearInterval(Messages.room);
+
+    // run the interval for fecthing messages
+    Messages.fetchMsgsWithInterval(roomName);
+
   },
 
   addNewRoomOption: function(room) {

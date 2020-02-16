@@ -1,5 +1,7 @@
 var Messages = {
 
+  room: null,
+
   store: function (text) {
     var message = {
       username: App.username,
@@ -38,5 +40,16 @@ var Messages = {
     }, []);
 
     return messages;
+  },
+
+  fetchMsgsWithInterval: function(roomname) {
+
+    Messages.room = setInterval(() => {
+      Parse.fetchWithInterval(roomname, function(results) {
+        console.log(results);
+        var msgs = Messages.getUsernameAndText(results);
+        MessagesView.render(msgs, false);
+      });
+    }, 2000);
   }
 };
